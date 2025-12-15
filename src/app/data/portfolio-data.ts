@@ -113,7 +113,7 @@ export const projectsData: Project[] = [
     imageUrl: '/images/electroease.png',
     imageAiHint: 'electronics learning platform',
     category: 'Software',
-    liveDemoUrl: 'https://example.com/demo/electroease',
+    liveDemoUrl: 'https://elektroeasee.vercel.app/',
     githubRepoUrl: 'https://github.com/DavidSokoya/elektroease',
     technologies: ['React', 'NextJS', 'TailwindCSS', 'Firebase'],
     role: 'Full Stack Developer',
