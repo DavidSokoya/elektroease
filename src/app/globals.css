@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Default Studio Theme - Light Mode */
+    --background: 48 100% 97%; /* #FDFBFA Very Light Orange-White */
+    --foreground: 20 15% 25%; /* #453C37 Dark Brownish Grey */
+
+    --card: 0 0% 100%; /* #FFFFFF White cards */
+    --card-foreground: 20 15% 25%; /* Dark Brownish Grey text on cards */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 20 15% 25%; /* Dark Brownish Grey */
+
+    --primary: 22 95% 55%; /* #F27A1A Warm Orange */
+    --primary-foreground: 0 0% 100%; /* White for contrast on Warm Orange */
+
+    --secondary: 140 30% 55%; /* #6BAF87 Soft Green */
+    --secondary-foreground: 20 15% 10%; /* #1E1C1A Darker Brownish Grey for text on Green */
+
+    --muted: 40 50% 95%; /* #F9F3EF Light Beige */
+    --muted-foreground: 20 10% 45%; /* #7C736E Medium Brownish Grey text */
+
+    --accent: 140 30% 55%; /* #6BAF87 Soft Green (same as secondary for this theme) */
+    --accent-foreground: 20 15% 10%; /* Darker Brownish Grey */
+
+    --destructive: 0 70% 55%; /* #E15252 A slightly desaturated red */
+    --destructive-foreground: 0 0% 100%; /* White */
+
+    --border: 40 20% 85%; /* #E2DCD7 Light Grey-Beige border */
+    --input: 40 20% 85%;  /* Same as border */
+    --ring: 22 90% 60%; /* #F48B32 Brighter Warm Orange for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Chart colors for default Studio theme */
+    --chart-1: 22 95% 55%; /* Warm Orange */
+    --chart-2: 140 30% 55%; /* Soft Green */
+    --chart-3: 22 85% 65%; /* Lighter Warm Orange */
+    --chart-4: 140 30% 65%; /* Lighter Soft Green */
+    --chart-5: 20 15% 65%;   /* Medium Brownish Grey */
+
+    /* Sidebar colors (light) */
+    --sidebar-background: 48 100% 98%; /* #FEFCFB - Slightly off-white from main background */
+    --sidebar-foreground: 20 15% 25%; /* Dark Brownish Grey */
+    --sidebar-primary: 22 95% 55%; /* Warm Orange */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 40 50% 93%; /* #F7F0EB Lighter Beige for hover/active */
+    --sidebar-accent-foreground: 22 95% 50%; /* Darker Warm Orange text for light accent bg */
+    --sidebar-border: 40 20% 88%; /* #E5E0DC */
+    --sidebar-ring: 22 90% 60%; /* Brighter Warm Orange */
+  }
+
+  .dark {
+    /* Default Studio Theme - Dark Mode */
+    --background: 220 14% 10%; /* #13161A Very Dark Desaturated Blue */
+    --foreground: 0 0% 90%;   /* #E6E6E6 Light Grey */
+
+    --card: 220 14% 13%;       /* #1A1E23 Slightly Lighter Dark Desaturated Blue */
+    --card-foreground: 0 0% 90%; /* Light Grey */
+
+    --popover: 220 14% 13%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 22 90% 60%; /* #F48B32 Brighter Warm Orange for dark mode */
+    --primary-foreground: 20 15% 5%; /* #110F0D Almost Black for contrast */
+
+    --secondary: 140 30% 60%; /* #7BB992 Brighter Soft Green for dark mode */
+    --secondary-foreground: 0 0% 95%; /* Very Light Grey */
+
+    --muted: 220 14% 18%; /* #252A30 Darker version of card */
+    --muted-foreground: 0 0% 70%;  /* #B3B3B3 Medium Grey */
+
+    --accent: 140 30% 60%; /* Brighter Soft Green */
+    --accent-foreground: 0 0% 95%; /* Very Light Grey */
+
+    --destructive: 0 70% 60%; /* #ED6262 Brighter desaturated red for dark mode */
+    --destructive-foreground: 0 0% 100%; /* White */
+
+    --border: 220 14% 22%;       /* #2E343B Soft border for dark */
+    --input: 220 14% 22%;
+    --ring: 22 85% 65%; /* #F59847 Brighter Warm Orange ring */
+
+    /* Chart colors (dark) */
+    --chart-1: 22 90% 60%; /* Brighter Warm Orange */
+    --chart-2: 140 30% 60%;  /* Brighter Soft Green */
+    --chart-3: 22 80% 50%;   /* Warm Orange (Darker shade) */
+    --chart-4: 140 25% 50%;   /* Soft Green (Darker shade) */
+    --chart-5: 0 0% 60%;   /* Mid Grey */
+
+    /* Sidebar colors (dark) */
+    --sidebar-background: 220 14% 8%; /* #0F1114 Darkest for sidebar */
+    --sidebar-foreground: 0 0% 90%;   /* Light Grey text */
+    --sidebar-primary: 22 90% 60%; /* Brighter Warm Orange */
+    --sidebar-primary-foreground: 20 15% 5%; /* Almost Black on Warm Orange */
+    --sidebar-accent: 220 14% 15%; /* #1E2329 Dark accent for hover */
+    --sidebar-accent-foreground: 22 90% 70%; /* Lighter Warm Orange text for dark accent */
+    --sidebar-border: 220 14% 12%; /* #171A1F Subtle border */
+    --sidebar-ring: 22 85% 65%; /* Brighter Warm Orange ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%); /* Assumes content is doubled for seamless loop */
+    }
+  }
+}
